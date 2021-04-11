@@ -1,0 +1,25 @@
+#include<stdio.h>
+main()
+{
+	int marks;
+	char grad;
+	printf("Enter the marks:\n");
+	scanf("%d",&marks);
+	if(marks>100 || marks<0)//checking for an invalid result(if the use gives impossible marks
+	{
+		printf("Invalid Input!");
+		return 0;//terminates program since value given doesn't make sense
+	}
+	if(marks>=85)// the top limiting of 100 is removed because it is checked in the previous if
+		grad='A';
+	else if(marks>=70)
+		grad='B';
+	else if(marks>=55)
+		grad='C';
+	else if(marks>=40)
+		grad='D';
+	else
+		grad='F';
+	printf("Marks=%d\nGrade=%c",marks,grad);
+	return 0;
+}
