@@ -1,0 +1,26 @@
+#include<stdio.h>
+int prime(int n);
+int f=0, c=1;// c is to check whether the no. is divisible by it
+main()
+{
+	int n,f1;
+	printf("Enter a no.:\n");
+	scanf("%d",&n);
+	f1=prime(n);
+	if(f1==1)
+		printf("%d is a prime number",n);
+	else
+		printf("%d is not a prime number",n);
+	return 0;
+}
+
+int prime(int n)
+{
+	if(n%c==0)
+		f++;
+	c++;
+	if(c<=n/2)
+		prime(n);
+	else
+		return(f);
+}
