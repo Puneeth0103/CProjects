@@ -1,0 +1,30 @@
+#include<stdio.h>
+#include<conio.h>
+#include<string.h>
+
+main()
+{
+	FILE *fp;
+	
+	fp=fopen("mycap.txt","w");
+	fprintf(fp,"This has to be printed in reverse");
+	fclose(fp);
+	
+	int i=0,cnt;
+	fp=fopen("mycap.txt","r");
+	
+	fseek(fp,0,SEEK_END);
+	cnt=ftell(fp);
+	while(i<cnt)
+	{
+		i++;
+		fseek(fp,-i,SEEK_END);
+		printf("%c",fgetc(fp));
+	}
+	
+	
+	fclose(fp);
+	return 0;
+}
+		
+	
